@@ -1,0 +1,80 @@
+/* This is a partial blocks.css, you need to add more rules
+   to this file to complete the assignment.  Do not add any CSS
+   styling to the original index.htm / start.htm */
+
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    border-top: 2px solid #cccccc;
+}
+
+div{
+    position: fixed;
+    width: 25%;
+    border: 5px solid;
+    margin: 5px;
+    padding: 5px;
+}
+div::before{
+    content: "SAMPLE";
+    position: absolute;
+    font-size: 40px;
+    font-weight: bold;
+}
+div, p{
+    font-size: 30px;
+}
+
+p{
+    background-color: #0a4b33;
+    padding: 5px;
+}
+a{
+    text-decoration: none;
+    color: #fff;
+}
+
+/* Here is one of many  CSS rules you will need... */
+#one {
+    top: 43%;
+    right: 8%;
+    border-color: #0243fd;
+}
+#one::before{
+    left: -37%;
+    top: 15%;
+    color: #ff9300;
+}
+#two{
+    top: 10%;
+    right: 8%;
+    border-color: #008012;
+}
+#two::before{
+    left: -28%;
+    top: 40%;
+    color: #0243fd;
+}
+#three{
+    top: 10%;
+    left: 8%;
+    border-color : #ffa500;
+}
+#three::before{
+    top: 30%;
+    right: -70px;
+    color: #e32700;
+}
+#four{
+    top: 55%;
+    left: 8%;
+    border-color: #ffd712;
+}
+#four::before{
+    top: 40%;
+    right: -85px;
+    color: #0243fd;
+}
+#link{
+    left: 47%;
+    position: fixed;
+}
