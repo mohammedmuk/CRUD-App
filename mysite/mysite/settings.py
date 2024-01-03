@@ -38,6 +38,9 @@ INSTALLED_APPS = [
     'taggit',
     'home.apps.HomeConfig',
     'ads.apps.AdsConfig',
+    'autos.apps.AutosConfig',
+    'cats.apps.CatsConfig',
+    'polls.apps.PollsConfig',
 
     # Sample Applications - don't copy
 

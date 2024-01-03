@@ -1,6 +1,14 @@
 {% extends "base_bootstrap.html" %}
 
 {% block content %}
+<style>
+    h1, p{
+        color: #fff;
+    }
+    a{
+        color: ;
+    }
+</style>
   <h1>Auto List</h1>
   {% if auto_list %}
   <ul>
@@ -24,7 +32,7 @@
     {% endif %}
   </p>
   <p>
-  <a href="{% url 'autos:make_list' %}">View makes</a> ({{ make_count }}) | 
+  <a href="{% url 'autos:make_list' %}">View makes</a> ({{ make_count }}) |
     <a href="{% url 'autos:make_create' %}">Add a make</a>
   </p>
 {% endblock %}

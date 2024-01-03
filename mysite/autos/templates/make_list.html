@@ -1,7 +1,11 @@
 {% extends "base_bootstrap.html" %}
-
 {% block content %}
-  <h1>Make List</h1>
+<style>
+    h1, p{
+        color:#fff;
+    }
+</style>
+  <h1 class="auto-color">Make List</h1>
   {% if make_list %}
   <ul>
     {% for make in make_list %}

@@ -1,7 +1,91 @@
 {% extends "base_bootstrap.html" %}
 {% block content %}
-    <h1>Welcome to {{ settings.APP_NAME }}</h1>
-    <p>
-    Hello world.
-    </p>
+
+<style>
+.container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.welcome{
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.welcome ul li{
+    background-color: #00ba7c;
+    padding: 10px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.welcome ul li:first-of-type{
+    margin-bottom:50px;
+}
+.welcome ul li a{
+    color: #fff;
+    transition : .5s;
+    font-weight: bold;
+}
+.welcome ul li a:hover{
+    color: #16212c;
+}
+.welcome ul li p{
+    font-size: 14px;
+    cursor : pointer;
+    margin-top:15px;
+    transition : .5s;
+}
+.welcome ul li p:hover{
+    color: #fff;
+}
+.welcome-header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.welcome-header h1{
+    font-size: 5.5vh;
+    color: #fff;
+}
+.welcome-header p{
+    font-size: 18px;
+    color: #09b863;
+    font-weight: bold;
+}
+</style>
+    <!--<h1>Welcome to {{ settings.APP_NAME }}</h1>-->
+    <section class='welcome'>
+      <ul>
+        <li>
+            <a href="{% url 'ads:all'%}">Go to Ads app</a>
+            <p>Description</p>
+        </li>
+        <li>
+            <a href="{% url 'autos:all'%}">Go to Auto app</a>
+            <p>Description</p>
+        </li>
+      </ul>
+      <div class='welcome-header'>
+           <h1>Welcome to CRUD Web App</h1>
+           <p>
+              You can click and use all apps you can see
+           </p>
+      </div>
+      <ul>
+        <li>
+            <a href="{% url 'cats:all'%}">Go to Cats app</a>
+            <p>Description</p>
+        </li>
+        <li>
+            <a href="{% url 'polls:index'%}">Go to Polls app</a>
+            <p>Description</p>
+        </li>
+      </ul>
+    </section>
 {% endblock content %}
