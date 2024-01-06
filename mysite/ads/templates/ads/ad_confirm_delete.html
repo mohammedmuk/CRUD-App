@@ -15,7 +15,7 @@
 
 <form action="" method="POST">
   {% csrf_token %}
-  <input type="submit"  class="btn btn-primary" value="Yes, delete.">
-  <a href="{% url 'ads:all' %}" class="btn btn-secondary">Cancel</a>
+  <input type="submit"  class="btn btn-success" value="Yes, delete.">
+  <a href="{% url 'ads:all' %}" class="btn btn-success">Cancel</a>
 </form>
 {% endblock %}

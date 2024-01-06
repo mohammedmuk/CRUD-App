@@ -2,13 +2,13 @@
 
 {% block content %}
 
-<h1>Delete Auto</h1>
+<h1 class="text-light mt-4">Delete Auto</h1>
 
-<p>Are you sure you want to delete the auto: {{ auto }}?</p>
+<p class="text-light">Are you sure you want to delete the auto: {{ auto }} ?</p>
 
 <form action="" method="POST">
   {% csrf_token %}
-  <input type="submit" value="Yes, delete.">
+  <input type="submit" value="Yes, delete." class="btn btn-success">
 </form>
 
 {% endblock %}

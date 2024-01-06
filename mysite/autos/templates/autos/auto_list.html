@@ -2,11 +2,11 @@
 
 {% block content %}
 <style>
-    h1, p{
+    h1, p, li{
         color: #fff;
     }
-    a{
-        color: ;
+    a, a:hover{
+        color: #00ba7c;
     }
 </style>
   <h1>Auto List</h1>
@@ -35,4 +35,5 @@
   <a href="{% url 'autos:make_list' %}">View makes</a> ({{ make_count }}) |
     <a href="{% url 'autos:make_create' %}">Add a make</a>
   </p>
+  <a href="{% url 'home:all'%}"class="btn btn-success">Home page</a>
 {% endblock %}

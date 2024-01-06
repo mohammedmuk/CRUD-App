@@ -1,91 +1,151 @@
-{% extends "base_bootstrap.html" %}
-{% block content %}
+{% extends "base_bootstrap.html" %} {% block content %}
 
 <style>
-.container{
+  .container {
     height: 100vh;
     display: flex;
     justify-content: center;
-}
+  }
 
-.welcome{
+  .welcome {
     display: flex;
     align-items: center;
     gap: 25px;
-}
+  }
 
-.welcome ul li{
+  .welcome ul li {
     background-color: #00ba7c;
     padding: 10px;
     border-radius: 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-.welcome ul li:first-of-type{
-    margin-bottom:50px;
-}
-.welcome ul li a{
+  }
+  .welcome ul li a {
     color: #fff;
-    transition : .5s;
+    transition: 0.5s;
     font-weight: bold;
-}
-.welcome ul li a:hover{
-    color: #16212c;
-}
-.welcome ul li p{
+    position: relative;
+  }
+  .welcome ul li a::before {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0px;
+    height: 3px;
+    width: 0%;
+    background: #16212c;
+    transition: 0.5s;
+  }
+  .welcome ul li a:hover::before {
+    width: 100%;
+  }
+  .welcome ul li p {
+    position: relative;
     font-size: 14px;
-    cursor : pointer;
-    margin-top:15px;
-    transition : .5s;
-}
-.welcome ul li p:hover{
+    cursor: pointer;
+    margin-top: 15px;
+    transition: 0.5s;
     color: #fff;
-}
-.welcome-header{
+    font-weight: bold;
+  }
+  .welcome ul li p::before {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0px;
+    height: 3px;
+    width: 0;
+    background: #16212c;
+    transition: 0.5s;
+  }
+  .welcome ul li p:hover::before {
+    width: 100%;
+  }
+  .welcome-header {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
+  }
 
-.welcome-header h1{
+  .welcome-header h1 {
     font-size: 5.5vh;
     color: #fff;
-}
-.welcome-header p{
+  }
+  .welcome-header p {
     font-size: 18px;
     color: #09b863;
     font-weight: bold;
-}
+  }
+  .des {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    z-index: 10;
+    width: 400px;
+    padding: 15px;
+  }
+  .des p {
+    font-size: 20px;
+  }
+  .ov {
+    display: none;
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background-color: #00000078;
+    z-index: 2;
+  }
+  .toggle{
+    display: block;
+  }
 </style>
-    <!--<h1>Welcome to {{ settings.APP_NAME }}</h1>-->
-    <section class='welcome'>
-      <ul>
-        <li>
-            <a href="{% url 'ads:all'%}">Go to Ads app</a>
-            <p>Description</p>
-        </li>
-        <li>
-            <a href="{% url 'autos:all'%}">Go to Auto app</a>
-            <p>Description</p>
-        </li>
-      </ul>
-      <div class='welcome-header'>
-           <h1>Welcome to CRUD Web App</h1>
-           <p>
-              You can click and use all apps you can see
-           </p>
-      </div>
-      <ul>
-        <li>
-            <a href="{% url 'cats:all'%}">Go to Cats app</a>
-            <p>Description</p>
-        </li>
-        <li>
-            <a href="{% url 'polls:index'%}">Go to Polls app</a>
-            <p>Description</p>
-        </li>
-      </ul>
-    </section>
+<div class="ov ads">
+  <div class="des">
+    <h2>Ads App</h2>
+    <p>
+      In this app you can add an ad and you can view it and put it in favorite,
+      and also you can make comments in ad and any user can see your comments .
+    </p>
+    <p>Try to login in this app and use the features of it.</p>
+  </div>
+</div>
+<div class="ov auto">
+  <div class="des">
+    <h2>Auto App</h2>
+    <p>
+      In this app you can add the name of the company and add the name of products of this company
+    </p>
+    <p>Try to login in this app and use the features of it.</p>
+  </div>
+</div>
+<section class="welcome">
+  <ul>
+    <li>
+      <a href="{% url 'ads:all'%}">Go to Ads app</a>
+      <p class="d-ad">Description</p>
+    </li>
+  </ul>
+  <div class="welcome-header">
+    <h1>Welcome to CRUD Web App</h1>
+    <p>You can click and use all apps you can see</p>
+  </div>
+  <ul>
+    <li>
+      <a href="{% url 'autos:all'%}">Go to Auto app</a>
+      <p class="d-at">Description</p>
+    </li>
+  </ul>
+</section>
+<script>
+  document.querySelector('.d-ad').addEventListener('click', () => document.querySelector('.ads').classList.add('toggle'))
+  document.querySelector('.ads').addEventListener('click', () => document.querySelector('.ads').classList.remove('toggle'))
+  document.querySelector('.d-at').addEventListener('click', () => document.querySelector('.auto').classList.add('toggle'))
+  document.querySelector('.auto').addEventListener('click', () => document.querySelector('.auto').classList.remove('toggle'))
+</script>
 {% endblock content %}
