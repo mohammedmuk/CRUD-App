@@ -21,11 +21,11 @@ from django.contrib.auth import views as auth_views
 from django.views.static import serve
 
 urlpatterns = [
-    path('', include('home.urls')),
+    path('', include('ads.urls')),
     path('admin/', admin.site.urls), 
     path('accounts/', include('django.contrib.auth.urls')),
     re_path(r'^oauth/', include('social_django.urls', namespace='social')),
-    path('ads/', include('ads.urls')),
+    path('home/', include('home.urls')),
     path('autos/', include('autos.urls')),
 ]
 
